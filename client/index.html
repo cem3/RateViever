@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <title>Rate Viewer</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" />
+
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/moment/moment.js"></script>
+    <script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/node_modules/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+    <script type="text/javascript" src="node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>
+    <script type="text/javascript" src="/node_modules/chart.js/dist/chart.js"></script>
+    <script type="text/javascript" src="/node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="graph.js"></script>
+    <script type="text/javascript" src="currencyService.js"></script>
+    <script type="text/javascript" src="downloadDirective.js"></script>
+
+</head>
+
+<body>
+    <div ng-controller="RateCtrl">
+        <div ng-if="mode === 'graph'">
+            <div ng-include="'graph.html'"></div>
+        </div>
+
+        <div ng-if="mode === 'table'">
+            <div ng-include="'table.html'"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>

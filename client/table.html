@@ -1,0 +1,43 @@
+<div class="row">
+  <button type="button" class="btn btn-success pin-to-left" ng-click="">
+    <file-download fileurl="getReport/currency.csv?mode=multiple&name={{cols}}&id={{colsIds}}&dateStart={{dateStart}}&dateEnd={{dateEnd}}" data-textattr="{{ dateEnd }}" linktext="Download"></file-download>
+  </button>
+  <div class="dropdown col-sm-1 col-sm-offset-3">
+    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="true">
+        + 
+        <span class="caret"></span>
+   </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <li class="liselect" ng-click="increment(currency)" value="{{currency}}" ng-repeat="currency in tableCurrencies">
+        <a href="#" class="SortClass" name="Sortclass" style="left:0px" value="{{currency}}">{{currency.name}}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="dropdown col-sm-1 col-sm-offset-1">
+    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="true">
+        -
+        <span class="caret"></span>
+   </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+      <li class="liselect" ng-click="decrement(col)" value="{{col}}" ng-repeat="col in cols | filter: decFilter">
+        <a href="#" class="SortClass" name="Sortclass" style="left:0px" value="{{currency}}">{{col}}</a>
+      </li>
+    </ul>
+  </div>
+
+  <button type="button" class="btn btn-success pin-to-right" ng-click="changeMode('graph')">Graph Mode</button>
+
+
+</div>
+
+<table class="table table-bordered">
+  <tr>
+    <th ng-repeat="col in cols ">{{col}}</th>
+  </tr>
+  <tr ng-repeat="row in tableData">
+    <td ng-repeat="item in row ">{{item}}</td>
+  </tr>
+</table>

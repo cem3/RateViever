@@ -1,0 +1,10 @@
+.pin-to-right{
+  float: right;
+  margin-right: 16px;
+
+}
+
+.pin-to-left{
+  float:left;
+  margin-left: 16px
+}

@@ -39,7 +39,7 @@ app.get('/getReport/*', function (req, res) {
 
         });
         stringify(input, { delimiter: '\t' }, function (err, output) {
-          fs.writeFile(path + "./../../currency.csv", output, function (err) {
+          fs.writeFile(path.join(__dirname + './../currency.csv'), output, function (err) {
             if (err) throw err;
             response.sendFile(path.join(__dirname + './../currency.csv'));
           });
@@ -101,7 +101,7 @@ var getData = function (length, counter, ids, start, end, data, input, response)
 
 
     stringify(input, { delimiter: '\t' }, function (err, output) {
-      fs.writeFile(path + "./../../currency.csv", output, function (err) {
+      fs.writeFile(path.join(__dirname + './../currency.csv'), output, function (err) {
         if (err) throw err;
         response.sendFile(path.join(__dirname + './../currency.csv'));
       });
